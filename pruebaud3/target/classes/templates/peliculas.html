@@ -1,0 +1,47 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Peliculas</title>
+</head>
+<body>
+
+<div class="col-12">
+    <div class="mt-3">
+        <form action="/peliculas/crear">
+            <button type="submit" class="btn btn-primary">Crear Pelicula</button>
+        </form>
+    </div>
+</div>
+
+<div class="row clearfix mb-4">
+    <div class="col">ID</div>
+    <div class="col">titulo</div>
+    <div class="col">Descripcion</div>
+    <div class="col">Fecha de Lanzamiento</div>
+    <div class="col">Idioma</div>
+    <div class="col">Duracion del Alquiler</div>
+    <div class="col">Rental Rate</div>
+    <div class="col">Duracion</div>
+    <div class="col">Replacement Cost</div>
+    <div class="col">Última Actualización</div>
+</div>
+
+<div th:each="pelicula : ${listaPeliculas}" class="row clearfix mb-4 border-bottom">
+    <div th:text="${pelicula.id}" class="col"></div>
+    <div th:text="${pelicula.titulo}" class="col"></div>
+    <div th:text="${pelicula.fecha_lanzamiento}" class="col"></div>
+    <div th:href="@{'/idiomas/'+${pelicula.idioma.nombre}}" class="col"></div>
+    <div th:text="${pelicula.duracion_alquiler}" class="col"></div>
+    <div th:text="${pelicula.rental_rate}" class="col"></div>
+    <div th:text="${pelicula.duracion}" class="col"></div>
+    <div th:text="${pelicula.replacement_cost}" class="col"></div>
+    <div th:text="${pelicula.ultima_actualizacion}" class="col"></div>
+</div>
+</div>
+
+</body>
+</html>

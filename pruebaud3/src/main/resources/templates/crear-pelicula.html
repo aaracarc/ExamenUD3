@@ -1,0 +1,94 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title th:text="#{titulo.crearPelicula}"></title>
+</head>
+
+<body>
+
+<div class="container mt-4">
+    <form th:action="@{/peliculas/crear}" th:object="${pelicula}" method="post">
+
+        <div class="row justify-content-center align-items-center">
+            <div class="col">
+                <h1 th:text="#{titulo.crearPelicula}"></h1>
+            </div>
+            <div class="col">
+                <div>
+                    <button type="submit" class="btn btn-primary" th:text="#{boton.crear}"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2">
+                <label th:text="#{label.titulo}"></label>
+                <input class="form-control" th:field="*{titulo}"/>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2">
+                <label th:text="#{label.descripcion}"></label>
+                <input class="form-control" th:field="*{descripcion}"/>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2">
+                <label th:text="#{label.fecha_lanzamiento}"></label>
+                <input class="form-control" th:field="*{fecha_lanzamiento}"/>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2">
+                <label th:text="#{label.idioma}"></label>
+                <input class="form-control" th:field="*{idioma}"/>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2">
+                <label th:text="#{label.duracion_alquiler}"></label>
+                <input class="form-control" th:field="*{duracion_alquiler}"/>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2">
+                <label th:text="#{label.rental_rate}"></label>
+                <input class="form-control" th:field="*{rental_rate}"/>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2">
+                <label th:text="#{label.duracion}"></label>
+                <input class="form-control" th:field="*{duracion}"/>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2">
+                <label th:text="#{label.replacement_cost}"></label>
+                <input class="form-control" th:field="*{replacement_cost}"/>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2">
+                <label th:text="#{label.ultima_actualizacion}"></label>
+                <input class="form-control" th:field="*{ultima_actualizacion}"/>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
